@@ -25,8 +25,8 @@ _IS_INLINE = True
 allowAllFilter = filters.create(lambda _, __, ___: Config.ALLOW_ALL_PMS)
 noPmMessage = bk_noPmMessage = ("Hello {fname} this is an automated message\n"
                                 "Please wait until you get approved to direct message "
-                                "And please dont spam until then ")
-blocked_message = bk_blocked_message = "**You were automatically blocked**"
+                                "And please dont spam until then.")
+blocked_message = bk_blocked_message = "**You were automatically blocked.**"
 
 
 async def _init() -> None:
@@ -282,8 +282,8 @@ async def uninvitedPmHandler(message: Message):
         else:
             pmCounter[message.from_user.id] += 1
             await message.reply(
-                f"You have {pmCounter[message.from_user.id]} out of 4 **Warnings**\n"
-                "Please wait until you get approved to pm !", del_in=5)
+                f"You have {pmCounter[message.from_user.id]} **Warnings**\n"
+                "Please do not spam!", del_in=5)
     else:
         pmCounter.update({message.from_user.id: 1})
         if userge.has_bot and _IS_INLINE:
@@ -296,10 +296,10 @@ async def uninvitedPmHandler(message: Message):
                 )
             except (IndexError, BotInlineDisabled):
                 await message.reply(
-                    noPmMessage.format_map(SafeDict(**user_dict)) + '\n`- Protected by userge`')
+                    noPmMessage.format_map(SafeDict(**user_dict)) + 'Bot by @saibubo.')
         else:
             await message.reply(
-                noPmMessage.format_map(SafeDict(**user_dict)) + '\n`- Protected by userge`')
+                noPmMessage.format_map(SafeDict(**user_dict)) + 'Bot by @saibubo.')
         await asyncio.sleep(1)
         await CHANNEL.log(f"#NEW_MESSAGE\n{user_dict['mention']} has messaged you")
 
