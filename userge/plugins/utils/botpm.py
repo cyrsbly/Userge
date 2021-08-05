@@ -131,10 +131,10 @@ if userge.has_bot:
             copy_ = "https://github.com/UsergeTeam/Userge/blob/master/LICENSE"
             markup = InlineKeyboardMarkup([
                 [
-                    InlineKeyboardButton(text="👥 UsergeTeam", url="https://github.com/UsergeTeam"),
-                    InlineKeyboardButton(text="🧪 Repo", url=Config.UPSTREAM_REPO)
+                    InlineKeyboardButton(text="Sai's Channel", url="https://t.me/saibubo"),
+                    InlineKeyboardButton(text="Olympus", url="https://t.me/werewolfolympus")
                 ],
-                [InlineKeyboardButton(text="🎖 GNU GPL v3.0", url=copy_)]
+                [InlineKeyboardButton(text="Add this bot to your group!", url="http://t.me/ppnaravxt_bot?startgroup=start"]
             ])
             await send_start_text(msg, text, path, markup)
             return
@@ -206,7 +206,7 @@ if userge.has_bot:
             await msg.reply("User banned forever.")
             # noinspection PyBroadException
             try:
-                await bot.send_message(user_id, "You have been Banned Forever.")
+                await bot.send_message(user_id, "You have been banned forever.")
             except Exception:
                 pass
 
