@@ -43,7 +43,7 @@ _BANNED_USERS: List[int] = []
 _U_ID_F_M_ID: Dict[int, int] = {}
 _STATS: Dict[str, int] = {"incoming": 0, "outgoing": 0}
 
-START_TEXT = " Hello {mention}, you can contact me using this Bot."
+START_TEXT = " Hello {mention}! Welcome to my bot! How can i help you?"
 START_MEDIA = os.environ.get("START_MEDIA", None)
 
 botPmFilter = filters.create(lambda _, __, ___: BOT_PM)
