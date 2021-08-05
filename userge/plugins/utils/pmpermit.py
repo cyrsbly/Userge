@@ -332,7 +332,7 @@ if userge.has_bot:
                 await c_q.edit_message_text(
                     f"{user.mention} allowed to Direct Messages.")
                 await userge.send_message(
-                    userID, f"{owner.mention} `approved you to Direct Messages.`")
+                    userID, f"{owner.mention} accepted your request.")
                 if userID in pmCounter:
                     del pmCounter[userID]
                 Config.ALLOWED_CHATS.add(userID)
